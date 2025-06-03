@@ -12,11 +12,11 @@
   </header>
 
   <form method="GET" action="/" class="mb-6 text-center">
-    <select name="date" onchange="this.form.submit()" class="p-2 border rounded">
-      <option value="сегодня">Сегодня</option>
-      <option value="завтра">Завтра</option>
-      <option value="послезавтра">Послезавтра</option>
-    </select>
+	<select name="date" onchange="this.form.submit()" class="p-2 border rounded">
+	  <option value="сегодня" <%= selectedDate === 'сегодня' ? 'selected' : '' %>>Сегодня</option>
+	  <option value="завтра" <%= selectedDate === 'завтра' ? 'selected' : '' %>>Завтра</option>
+	  <option value="послезавтра" <%= selectedDate === 'послезавтра' ? 'selected' : '' %>>Послезавтра</option>
+	</select>
   </form>
 
   <% movies.forEach(movie => { %>

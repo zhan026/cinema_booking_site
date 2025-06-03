@@ -42,5 +42,11 @@ app.post('/book', (req, res) => {
   });
 });
 
+const date = req.query.date || 'сегодня';
+db.all("SELECT * FROM movies WHERE date = ?", [date], (err, rows) => {
+  const movies = rows.map(m => ({ ...m, times: m.times.split(',') }));
+  res.render('index', { movies, selectedDate: date });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => console.log(`Сервер запущен на порту ${PORT}`));

@@ -20,7 +20,7 @@
       <input type="hidden" name="time" value="<%= time %>">
       <label class="block">Выберите место:
         <select name="seat" class="border p-2 w-full mt-1" required>
-          <% for (let row of ['A', 'B', 'C']) { for (let num = 1; num <= 5; num++) { %>
+          <% for (let row of ['1-ряд', '2-ряд', '3-ряд','4-ряд','5-ряд','6-ряд',]) { for (let num = 1; num <= 9; num++) { %>
             <option><%= row + num %></option>
           <% }} %>
         </select>

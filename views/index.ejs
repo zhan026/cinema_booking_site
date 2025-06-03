@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Кинотеатр</title>
+  <title>ZhanCinema</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
 <body class="bg-gray-100 p-6">
-  <h1 class="text-2xl font-bold mb-4">Афиша фильмов</h1>
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold text-center text-blue-600">ZhanCinema</h1>
+  </header>
+  <div class="mb-4">
+    <label class="block mb-1 font-semibold">Выберите дату:</label>
+    <select class="border p-2 w-full max-w-sm">
+      <option>Сегодня</option>
+      <option>Завтра</option>
+      <option>Послезавтра</option>
+    </select>
+  </div>
+  <h2 class="text-2xl font-bold mb-4">Афиша фильмов</h2>
   <div class="grid gap-4 grid-cols-1 sm:grid-cols-2">
     <% movies.forEach(movie => { %>
       <div class="bg-white p-4 rounded shadow">

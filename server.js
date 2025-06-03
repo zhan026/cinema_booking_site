@@ -13,7 +13,16 @@ app.use(express.urlencoded({ extended: true }));
 db.serialize(() => {
   db.run("CREATE TABLE IF NOT EXISTS movies (id INTEGER PRIMARY KEY, title TEXT)");
   db.run("CREATE TABLE IF NOT EXISTS bookings (id INTEGER PRIMARY KEY, movie_id INTEGER, seat TEXT)");
-  db.run("INSERT OR IGNORE INTO movies (id, title) VALUES (1, 'Фильм 1'), (2, 'Фильм 2')");
+  const movies = [
+    [1, 'Фильм 1'],
+    [2, 'Фильм 2'],
+    [3, 'Фильм 3'],
+    [4, 'Фильм 4'],
+    [5, 'Фильм 5']
+  ];
+  movies.forEach(([id, title]) => {
+    db.run("INSERT OR IGNORE INTO movies (id, title) VALUES (?, ?)", [id, title]);
+  });
 });
 
 app.get('/', (req, res) => {

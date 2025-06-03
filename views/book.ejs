@@ -13,7 +13,7 @@
 
   <div class="max-w-2xl mx-auto bg-white p-4 rounded shadow">
     <h2 class="text-xl font-semibold mb-4">Фильм: <%= movie.title %> — <%= time %></h2>
-    <img src="/images/hall.png" alt="Зал" class="w-full mb-4 rounded" />
+    <img src="/images/hall.jpg" alt="Зал" class="w-full mb-4 rounded" />
 
     <form method="POST" action="/book" class="space-y-4">
       <input type="hidden" name="movie_id" value="<%= movie.id %>">

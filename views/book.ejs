@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Бронирование</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 p-6">
+  <h1 class="text-2xl font-bold mb-4">Бронирование билета - <%= movie.title %></h1>
+  <form method="POST" action="/book" class="space-y-4">
+    <input type="hidden" name="movie_id" value="<%= movie.id %>">
+    <label class="block">
+      Место:
+      <input type="text" name="seat" class="border p-2 w-full" placeholder="Например, A1" required>
+    </label>
+    <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Забронировать</button>
+  </form>
+</body>
+</html>

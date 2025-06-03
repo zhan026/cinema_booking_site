@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кинотеатр</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 p-6">
+  <h1 class="text-2xl font-bold mb-4">Афиша фильмов</h1>
+  <div class="grid gap-4 grid-cols-1 sm:grid-cols-2">
+    <% movies.forEach(movie => { %>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold"><%= movie.title %></h2>
+        <a href="/book/<%= movie.id %>" class="mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded">Забронировать</a>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>
